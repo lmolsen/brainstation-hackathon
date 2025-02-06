@@ -23,11 +23,24 @@ const questionEl = document.querySelector(".question");
 const optionUl = document.querySelector(".options");
 const scoreEl = document.querySelector(".score");
 const nextBtn = document.querySelector(".next-question");
-
+const formEl = document.querySelector(".preferences__form");
 const baseUrl = "https://opentdb.com/api.php";
 let score = 0;
 let questions = [];
 let index = 0;
+
+formEl.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    const question = document.getElementById("number").value;
+    const level = document.getElementById("difficulty").value;
+    const category = document.getElementById("category").value;
+
+    //call the fetchQuestion function
+    fetchQuestion(question,category,level);
+    
+
+})
+
 async function fetchQuestion(question, category, level) {
   const url = `${baseUrl}?amount=${question}&category=${category}&difficulty=${level}&type=multiple`;
   try {
@@ -45,7 +58,7 @@ async function fetchQuestion(question, category, level) {
     console.error(error);
   }
 }
-fetchQuestion(5, 19, "easy");
+// fetchQuestion(5, 19, "easy");
 function displayQuiz() {
   if (index < questions.length) {
     questionEl.innerHTML = "";
@@ -55,15 +68,15 @@ function displayQuiz() {
     console.log(currentQuestion.question);
     console.log(currentQuestion.answer);
     console.log(currentQuestion.options);
-    let optionsList = currentQuestion.options;
+    let optionsList = currentQuestion.options.sort();
     let currentAnswer = currentQuestion.answer;
     questionEl.textContent = currentQuestion.question;
 
     //iterate through array
     optionsList.forEach((option) => {
-      const li = document.createElement("li");
+      const li = document.createElement("div");
       li.textContent = option;
-      li.addEventListener("click", () => checkAnswer(option, currentAnswer));
+      li.addEventListener("click", () => checkAnswer(option, currentAnswer, li));
       optionUl.appendChild(li);
     });
     nextBtn.disabled = true;
@@ -81,13 +94,15 @@ function displayQuiz() {
 
 }
 
-function checkAnswer(option, answer) {
+function checkAnswer(option, answer, selectedAnswer) {
   console.log("I have clicked " + option);
   if (option === answer) {
     console.log("My answer is correct");
+    selectedAnswer.classList.add()
     score++;
   } else {
     console.log("Wrong answer");
+    selectedAnswer.classList.add()
   }
 }
 
@@ -95,4 +110,4 @@ nextBtn.addEventListener("click",()=>{
     index++;
     displayQuiz();
 })
-//  scoreEl.textContent = score;
+

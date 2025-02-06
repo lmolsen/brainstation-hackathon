@@ -125,20 +125,20 @@ function displayQuiz() {
     optionUl.innerHTML = "";
     if ((score/questions.length) >= 0.8 && (score/questions.length) < 1 )
     {
-    scoreEl.textContent = `Great job! Your score is : ${score}/${questions.length}`;
+    scoreEl.textContent = `Great job! Score : ${score}/${questions.length}`;
     }    else  if ((score/questions.length) === 1 )
       {
-      scoreEl.textContent = `Perfect! Your score is : ${score}/${questions.length}`;
+      scoreEl.textContent = `Perfect! Score : ${score}/${questions.length}`;
       } else if ((score/questions.length) >= 0.5 && (score/questions.length) < 0.8 )
       {
-        scoreEl.textContent = `Nice! Your score is : ${score}/${questions.length}`;
+        scoreEl.textContent = `Nice! Score : ${score}/${questions.length}`;
       } else if ((score/questions.length) < 0.5 && (score/questions.length) > 0 )
         {
-          scoreEl.textContent = `Better luck next time. Your score is : ${score}/${questions.length}`;
+          scoreEl.textContent = `Better luck next time. Score : ${score}/${questions.length}`;
         }
         else  if ((score/questions.length) === 0 )
           {
-            scoreEl.textContent = `Yikes. Your score is : ${score}/${questions.length}`;
+            scoreEl.textContent = `Oops... Score : ${score}/${questions.length}`;
           }
     nextBtn.disabled = true;
     nextBtn.classList.add("questions__button--hidden");

@@ -190,7 +190,16 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        min-height: 37.5rem;
+        max-height: 42rem;
+        @include tablet {
+            min-height: 30rem;
+        max-height: 35rem;
+    }
+        @include desktop {
         min-height: 34rem;
+        max-height: 33.8125rem;
+        }
         flex-wrap: wrap;
         // justify-content: center;
         padding: 2rem;
@@ -217,7 +226,7 @@
         padding: 0 1rem;
 
         @include tablet {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             padding: 0 5rem;
         }
     }
@@ -330,7 +339,8 @@
         }
 
         &--hidden {
-            visibility: hidden;
+            // visibility: hidden;
+            display: none;
         }
 
     }

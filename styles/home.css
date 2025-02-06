@@ -152,6 +152,7 @@ label {
   display: flex;
   padding-top: 2rem;
   align-items: flex-end;
+  justify-content: space-between;
 }
 .footer__header {
   padding-right: 4rem;

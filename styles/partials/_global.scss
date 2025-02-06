@@ -123,6 +123,10 @@ label {
         display: flex;
         padding-top: 2rem;
         align-items: flex-end;
+        justify-content: space-between;
+        // @include desktop {
+        //     // justify-content: flex-start;
+        // }
         
     }
     &__header {

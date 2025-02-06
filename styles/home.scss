@@ -3,39 +3,6 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
-// PLAIN HERO
-// .hero {
-//     background-image: url(../assets/images/mystery-box-collage.jpg);
-//     background-position: center;
-//     background-size: cover;
-//     display: flex;
-//     flex-direction: column;
-//     // align-items: center;
-//     justify-content: center;
-//     height: 20rem;
-
-//     @include tablet {
-//         height: 30rem;
-//     }
-
-//     @include desktop {
-//         height: 55rem;
-//     }
-
-//     &__title {
-//         color: $primary-color-alt;
-//         width: 100%;
-//         display: flex;
-//         justify-content: center;
-//         background-color: rgba(from $secondary-color r g b / 0.8);
-//         padding-top: 2.25rem;
-//         // padding-bottom: 0;
-//     }
-
-
-// }
-
-//TEXT CHANGE CLICK HERO
 .hero {
     background-image: url(../assets/images/mystery-box-collage.jpg);
     background-position: center;

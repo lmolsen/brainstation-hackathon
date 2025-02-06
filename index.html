@@ -7,6 +7,7 @@
     <script src="./scripts/home-page.js" defer></script>
     <title>TriviaStation | Home</title>
   </head>
+
   <body>
     <header>
       <nav class="navbar">
@@ -18,13 +19,12 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <!-- <section class="hero"> -->
-      <!-- <h1 class="hero__title">How much do you know?</h1> -->
+    <!--  <section class="hero">
+       <section class="hero"> 
+     <h1 class="hero__title">How much do you know?</h1>
       <h1 class="hero__title"></h1>
       <div class="hero__container"></div>
-    </section>
-
+    </section>-->
     <main>
       <section class="preferences">
         <div class="preferences__container">
@@ -32,7 +32,7 @@
           <p>Select your preferences for your trivia game.</p>
           <form class="preferences__form">
             <label class="preferences__label" for="number">Number of Questions</label>
-            <input class="preferences__num-input" type="number" name="number" id="number" min="1" max="50" value="10">
+            <input class="preferences__num-input" type="number" name="number" id="number" min="1" max="50" value="10" />
             <label class="preferences__label" for="difficulty">Difficulty</label>
             <select class="preferences__dif-dropdown" name="difficulty" id="difficulty">
               <option value="any">Any Difficulty</option>
@@ -70,17 +70,37 @@
             </select>
             <label class="preferences__label" for="type">Type</label>
             <select class="preferences__type-dropdown" name="type" id="type">
-                <option value="any">Any Type</option>
-                <option value="multiple">Multiple Choice</option>
-                <option value="boolean">True / False</option>
+              <option value="any">Any Type</option>
+              <option value="multiple">Multiple Choice</option>
+              <option value="boolean">True / False</option>
             </select>
 
             <button class="preferences__button" type="submit">Start</button>
           </form>
         </div>
       </section>
+
+      <section class="questions">
+        <div class="questions__container">
+          <h1 class="questions__title">Questions</h1>
+          <div class="questions__content"></div>
+          <div class="questions__question">
+            <!--append question here-->
+            <!-- <h2 class="questions__text">1. What is a hackathon?</h2> -->
+          </div>
+          <div class="questions__options">
+            <!--append answers here-->
+            <!-- <div class="questions__answer">A. Challenging</div>
+            <div class="questions__answer">B. Difficult</div>
+            <div class="questions__answer">C. Tiring</div>
+            <div class="questions__answer">D. All of the above</div> -->
+          </div>
+          <div class="questions__button">Next</div>
+          <div class="questions__score"><!--Add text here--></div>
+        </div>
+      </section>
     </main>
-    
+
     <footer>
       <section class="footer">
         <div class="footer__container">
@@ -88,8 +108,6 @@
             <h2 class="footer__header">Contact Us</h2>
             <div class="footer__icons">
               <a href="http://www.linkedin.com" target="_blank"><img class="footer__icon" src="./assets/icons/linkedin-icon.png" alt="linkedin logo" /></a>
-    
-
             </div>
           </div>
           <div class="footer__info">

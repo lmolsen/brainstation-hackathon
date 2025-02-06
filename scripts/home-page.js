@@ -1,4 +1,4 @@
-document.body.classList.add('no-scroll');
+// document.body.classList.add('no-scroll');
 
 const scrollThreshold = 100;
 

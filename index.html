@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/home.css" />
-    <!-- <script src="./scripts/home-page.js" defer></script> -->
+    <script src="./scripts/home-page.js" defer></script>
     <title>TriviaStation | Home</title>
   </head>
   <body>
@@ -17,10 +17,14 @@
         </div>
       </nav>
     </header>
+
     <section class="hero">
-      <h1 class="hero__title">Did you know?</h1>
+      <!-- <section class="hero"> -->
+      <!-- <h1 class="hero__title">How much do you know?</h1> -->
+      <h1 class="hero__title"></h1>
       <div class="hero__container"></div>
     </section>
+
     <main>
       <section class="preferences">
         <div class="preferences__container">
@@ -71,11 +75,12 @@
                 <option value="boolean">True / False</option>
             </select>
 
-            <button class="preferences__button" type="submit">Submit</button>
+            <button class="preferences__button" type="submit">Start</button>
           </form>
         </div>
       </section>
     </main>
+    
     <footer>
       <section class="footer">
         <div class="footer__container">

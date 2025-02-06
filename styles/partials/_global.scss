@@ -18,9 +18,14 @@ body {
 }
 
 h1 {
+    font-size: 1.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    @include tablet {
     font-size: 2.25rem;
     padding-top: 1.5rem;
     padding-bottom: 2.25rem;
+    }
 }
 
 h2 {
@@ -83,7 +88,7 @@ label {
     &__container {
         min-height: 8rem;
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         justify-content: center;
         flex-direction: column;
         @include container;
@@ -91,6 +96,7 @@ label {
 
     &__info {
         padding: 1rem 0;
+
     }
 
     &__subheader {
@@ -105,19 +111,22 @@ label {
 
     &__copy {
         padding-top: 1.5rem;
-        padding-bottom: 3rem;
+        padding-bottom: 2rem;
         text-size-adjust: 85%;
+ 
     }
 
     &__social {
         width: 100%;
         display: flex;
         padding-top: 3rem;
-        align-items: flex-start;
+        align-items: flex-end;
+        
     }
-
     &__header {
         padding-right: 4rem;
+        padding-bottom: .375rem;
+        font-size: 1.25rem;
     }
 
     &__icon {

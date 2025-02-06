@@ -1,0 +1,21 @@
+@use "../styles/partials/global";
+@use "../styles/partials/typography";
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+
+.results {
+    background-color: $primary-color;
+    height: 40rem;
+    
+    &__title {
+        display: flex;
+        justify-content: center;
+    }
+    &__score {
+    display: flex;
+    justify-content: center;
+    }
+    &__total::after {
+        content: " 0/50."; //replace with JS
+    }
+}

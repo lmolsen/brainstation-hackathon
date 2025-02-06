@@ -1,0 +1,9 @@
+@use "../styles/partials/global";
+@use "../styles/partials/typography";
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+
+.main {
+    background-color: $primary-color;
+    height: 40rem;
+}

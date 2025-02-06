@@ -36,9 +36,16 @@ body {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 1.25rem;
   padding-top: 1.5rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+}
+@media screen and (min-width: 48rem) {
+  h1 {
+    font-size: 2.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.25rem;
+  }
 }
 
 h2 {
@@ -103,7 +110,7 @@ label {
 .footer__container {
   min-height: 8rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   max-width: 80rem;
@@ -132,7 +139,7 @@ label {
 }
 .footer__copy {
   padding-top: 1.5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   -webkit-text-size-adjust: 85%;
      -moz-text-size-adjust: 85%;
           text-size-adjust: 85%;
@@ -141,10 +148,12 @@ label {
   width: 100%;
   display: flex;
   padding-top: 3rem;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 .footer__header {
   padding-right: 4rem;
+  padding-bottom: 0.375rem;
+  font-size: 1.25rem;
 }
 .footer__icon {
   height: 3.125rem;
@@ -159,6 +168,9 @@ label {
   align-items: center;
   justify-content: center;
   height: 20rem;
+  position: relative;
+  cursor: pointer;
+  transition: height 0.5s ease, opacity 0.5s ease;
 }
 @media screen and (min-width: 48rem) {
   .hero {
@@ -167,7 +179,7 @@ label {
 }
 @media screen and (min-width: 80rem) {
   .hero {
-    height: 50rem;
+    height: 55rem;
   }
 }
 .hero__title {
@@ -176,6 +188,38 @@ label {
   display: flex;
   justify-content: center;
   background-color: rgba(from #FFAA00 r g b/0.8);
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+  padding: 1.5rem 1rem;
+}
+.hero__title::after {
+  content: "How much do you know?";
+  transition: content 0.3s ease;
+}
+.hero__title:hover::after {
+  content: "Scroll to find out!";
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (min-width: 80rem) {
+  .hero__title:hover::after {
+    content: "Click to find out!";
+  }
+}
+.hero--is-clicked {
+  height: 0;
+  opacity: 0;
+}
+.hero--hidden {
+  display: none;
+}
+
+@media screen and (min-width: 80rem) {
+  .no-scroll {
+    overflow: hidden;
+  }
 }
 
 .preferences {
@@ -185,7 +229,6 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   max-width: 80rem;
   padding: 0 1rem;
 }
@@ -205,6 +248,7 @@ label {
   align-items: center;
   width: 100%;
   overflow: auto;
+  padding-bottom: 3rem;
 }
 .preferences__button {
   border: none;

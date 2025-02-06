@@ -38,12 +38,14 @@
 //     handleScrollTransition();
 // });
 
+
+// need to clean up a bit since we turned off scrolling back up to make hero reappear. maybe add that back in if we can get it to not be annoying and bounce the user up and down
 document.body.classList.add('no-scroll');
 
 const scrollThreshold = 100;
 const hero = document.querySelector('.hero');
-const heroTitle = document.querySelector('hero__title');
-let heroHidden = false; // Track if hero has already been hidden
+const heroTitle = document.querySelector('.hero__title');
+let heroHidden = false; 
 
 function handleScrollTransition() {
     if (window.innerWidth < 1280) {
@@ -51,9 +53,9 @@ function handleScrollTransition() {
 
         window.addEventListener('scroll', function () {
             if (window.scrollY > scrollThreshold && !heroHidden) {
-                hero.classList.add('hero--is-clicked'); // Hide the hero
-                // heroTitle.classList.add("hero__title--hidden");
-                heroHidden = true; // Prevent reappearing
+                hero.classList.add('hero--is-clicked'); 
+                heroTitle.classList.add("hero__title--hidden");
+                heroHidden = true; 
             }
         });
     } else {
@@ -64,17 +66,18 @@ function handleScrollTransition() {
 
 function handleClick() {
     if (!heroHidden) {
-        hero.classList.add('hero--is-clicked'); // Hide the hero on click
-        heroHidden = true; // Prevent reappearing
+        hero.classList.add('hero--is-clicked');
+        heroTitle.classList.add("hero__title--hidden");
+        heroHidden = true; 
     }
 }
 
 function handleScroll() {
     if (window.scrollY > scrollThreshold) {
-        hero.classList.add('hero--is-clicked'); // Hide the hero after scrolling past threshold
+        hero.classList.add('hero--is-clicked'); 
         heroTitle.classList.add("hero__title--hidden");
     } else {
-        hero.classList.remove('hero--is-clicked'); // Make hero visible again when scrolling back up
+        hero.classList.remove('hero--is-clicked'); 
     }
 }
 

@@ -150,7 +150,7 @@ label {
 .footer__social {
   width: 100%;
   display: flex;
-  padding-top: 3rem;
+  padding-top: 2rem;
   align-items: flex-end;
 }
 .footer__header {

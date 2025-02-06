@@ -94,7 +94,7 @@ function displayQuiz() {
     console.log(currentQuestion.options);
     let optionsList = currentQuestion.options.sort();
     let currentAnswer = currentQuestion.answer;
-    questionEl.textContent = currentQuestion.question;
+    questionEl.textContent = decode(currentQuestion.question);
 
     //iterate through array
     optionsList.forEach((option) => {
@@ -139,3 +139,7 @@ nextBtn.addEventListener("click",()=>{
     displayQuiz();
 })
 
+function decode(text) {
+    let doc = new DOMParser().parseFromString(text, "text/html");
+    return doc.documentElement.textContent;
+}

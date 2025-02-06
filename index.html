@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <!-- <script src="./scripts/home-page.js" defer></script> -->
+    <title>TriviaStation | Home</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__container">
+          <a class="navbar__home" href="index.html"><img class="navbar__logo" src="./assets/logos/trivialogo_black.png" alt="triviastation logo" /></a>
+          <h2 class="navbar__title">TriviaStation</h2>
+          <div class="navbar__spacer"></div>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <h1 class="hero__title">Did you know?</h1>
+      <div class="hero__container"></div>
+    </section>
+    <main>
+      <section class="preferences">
+        <div class="preferences__container">
+          <h1>Get Started</h1>
+          <p>Select your preferences for your trivia game.</p>
+          <form class="preferences__form">
+            <label class="preferences__label" for="number">Number of Questions</label>
+            <input class="preferences__num-input" type="number" name="number" id="number" min="1" max="50" value="10">
+            <label class="preferences__label" for="difficulty">Difficulty</label>
+            <select class="preferences__dif-dropdown" name="difficulty" id="difficulty">
+              <option value="any">Any Difficulty</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+            <label class="preferences__label" for="category">Category</label>
+            <select class="preferences__cat-dropdown" name="category" id="category">
+              <option value="any">Any Category</option>
+              <option value="9">General Knowledge</option>
+              <option value="10">Entertainment: Books</option>
+              <option value="11">Entertainment: Film</option>
+              <option value="12">Entertainment: Music</option>
+              <option value="13">Entertainment: Musicals &amp; Theatres</option>
+              <option value="14">Entertainment: Television</option>
+              <option value="15">Entertainment: Video Games</option>
+              <option value="16">Entertainment: Board Games</option>
+              <option value="17">Science &amp; Nature</option>
+              <option value="18">Science: Computers</option>
+              <option value="19">Science: Mathematics</option>
+              <option value="20">Mythology</option>
+              <option value="21">Sports</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="24">Politics</option>
+              <option value="25">Art</option>
+              <option value="26">Celebrities</option>
+              <option value="27">Animals</option>
+              <option value="28">Vehicles</option>
+              <option value="29">Entertainment: Comics</option>
+              <option value="30">Science: Gadgets</option>
+              <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+              <option value="32">Entertainment: Cartoon &amp; Animations</option>
+            </select>
+            <label class="preferences__label" for="type">Type</label>
+            <select class="preferences__type-dropdown" name="type" id="type">
+                <option value="any">Any Type</option>
+                <option value="multiple">Multiple Choice</option>
+                <option value="boolean">True / False</option>
+            </select>
+
+            <button class="preferences__button" type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer">
+        <div class="footer__container">
+          <div class="footer__social">
+            <h2 class="footer__header">Contact Us</h2>
+            <div class="footer__icons">
+              <a href="http://www.linkedin.com" target="_blank"><img class="footer__icon" src="./assets/icons/linkedin-icon.png" alt="linkedin logo" /></a>
     
-</body>
+
+            </div>
+          </div>
+          <div class="footer__info">
+            <p class="footer__subheader">SL Creations</p>
+            <p class="footer__text">1024 BrainStation Way</p>
+            <p class="footer__text">Toronto, ON, Canada</p>
+            <a href="mailto:info@triviastation.com"><p class="footer__email">info@triviastation.com</p></a>
+          </div>
+          <p class="footer__copy">Copyright Sherin & Lisa 2025 © All Rights Reserved</p>
+        </div>
+      </section>
+    </footer>
+  </body>
 </html>

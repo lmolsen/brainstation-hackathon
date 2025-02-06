@@ -1,0 +1,52 @@
+@use "./variables" as *;
+
+//media queries
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+
+@mixin text-light {
+    font-weight: 300;
+  }
+  
+@mixin text-regular {
+    font-weight: 400;
+  }
+  
+@mixin text-medium {
+    font-weight: 500;
+  }
+  
+  @mixin text-bold {
+    font-weight: 700;
+  }
+
+  @mixin form-style {
+    width: 16rem;
+    height: 2rem;
+    padding: 0.25rem;
+    border-radius: .25rem;
+    border:  1px solid $tertiary-color;
+    @include tablet {
+        width: 21rem;
+    }
+  }
+  
+@mixin container {
+    max-width: 80rem;
+    padding: 0 1rem;
+    @include tablet {
+        padding: 0 2rem;
+    }
+    @include desktop {
+        margin: auto;
+    }
+}

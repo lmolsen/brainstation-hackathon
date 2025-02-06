@@ -187,6 +187,11 @@
     }
     &__question {
         padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &--hidden {
+            display: none;
+        }
     }
 
     &__options {
@@ -253,6 +258,9 @@
             box-shadow: none;
             position: relative;
             transform: translate(0, 0.5rem);
+        }
+        &--hidden {
+            display: none;
         }
     }
     &__score {

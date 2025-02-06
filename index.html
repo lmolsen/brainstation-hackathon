@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/home.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/trivia-api.js" defer></script>
     <script src="./scripts/home-page.js" defer></script>
     <title>TriviaStation | Home</title>
   </head>
@@ -19,12 +21,11 @@
       </nav>
     </header>
 
-    <!--  <section class="hero">
-       <section class="hero"> 
-     <h1 class="hero__title">How much do you know?</h1>
+     <section class="hero">
+     <!-- <h1 class="hero__title">How much do you know?</h1> -->
       <h1 class="hero__title"></h1>
       <div class="hero__container"></div>
-    </section>-->
+    </section>
     <main>
       <section class="preferences">
         <div class="preferences__container">
@@ -35,14 +36,14 @@
             <input class="preferences__num-input" type="number" name="number" id="number" min="1" max="50" value="10" />
             <label class="preferences__label" for="difficulty">Difficulty</label>
             <select class="preferences__dif-dropdown" name="difficulty" id="difficulty">
-              <option value="any">Any Difficulty</option>
+              <option value="">Any Difficulty</option>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
             <label class="preferences__label" for="category">Category</label>
             <select class="preferences__cat-dropdown" name="category" id="category">
-              <option value="any">Any Category</option>
+              <option value="">Any Category</option>
               <option value="9">General Knowledge</option>
               <option value="10">Entertainment: Books</option>
               <option value="11">Entertainment: Film</option>
@@ -68,12 +69,12 @@
               <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
               <option value="32">Entertainment: Cartoon &amp; Animations</option>
             </select>
-            <label class="preferences__label" for="type">Type</label>
+            <!-- <label class="preferences__label" for="type">Type</label>
             <select class="preferences__type-dropdown" name="type" id="type">
               <option value="any">Any Type</option>
               <option value="multiple">Multiple Choice</option>
               <option value="boolean">True / False</option>
-            </select>
+            </select> -->
 
             <button class="preferences__button" type="submit">Start</button>
           </form>

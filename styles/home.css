@@ -341,6 +341,11 @@ label {
 }
 .questions__question {
   padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.questions__question--hidden {
+  display: none;
 }
 .questions__options {
   display: flex;
@@ -405,6 +410,9 @@ label {
   box-shadow: none;
   position: relative;
   transform: translate(0, 0.5rem);
+}
+.questions__button--hidden {
+  display: none;
 }
 .questions__score {
   padding-bottom: 3rem;

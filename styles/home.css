@@ -224,6 +224,8 @@ label {
 
 .preferences {
   background-color: #FFF5E1;
+}
+.preferences--hidden {
   display: none;
 }
 .preferences__container {

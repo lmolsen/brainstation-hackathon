@@ -104,8 +104,9 @@
 
 .preferences {
     background-color: $primary-color;
-
-        display: none;
+&--hidden {
+    display: none;
+}
 
     &__container {
         display: flex;

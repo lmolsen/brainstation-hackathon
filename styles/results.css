@@ -92,6 +92,9 @@ label {
     margin: auto;
   }
 }
+.navbar__home {
+  z-index: 2;
+}
 .navbar__logo {
   height: 3.125rem;
   width: 3.125rem;

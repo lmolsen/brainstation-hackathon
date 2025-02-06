@@ -57,6 +57,7 @@
     }
 
     &__title {
+        z-index: 1;
         color: $primary-color-alt;
         width: 100%;
         display: flex;
@@ -66,6 +67,11 @@
         z-index: 2;
         transition: opacity 0.5s ease;
         padding: 1.5rem 1rem;
+
+        &--hidden {
+            height: 0;
+            padding: 0;
+        }
 
         &::after {
             content: "How much do you know?";
@@ -104,9 +110,11 @@
 
 .preferences {
     background-color: $primary-color;
-&--hidden {
-    display: none;
-}
+    padding-bottom: 5rem;
+
+    &--hidden {
+        display: none;
+    }
 
     &__container {
         display: flex;
@@ -174,21 +182,25 @@
 
 
 .questions {
-    background-color: $primary-color;
     &--hidden {
         display: none;
     }
+
     &__container {
         display: flex;
         align-items: center;
         flex-direction: column;
+        min-height: 34rem;
         flex-wrap: wrap;
-        justify-content: center;
+        // justify-content: center;
+        padding: 2rem;
     }
+
     &__question {
         padding-bottom: 1rem;
         padding-left: 1rem;
         padding-right: 1rem;
+
         &--hidden {
             display: none;
         }
@@ -220,22 +232,27 @@
         color: $primary-color-alt;
         height: 4rem;
         border-radius: .25rem;
-               margin: 1rem;
+        margin: 1rem;
+
         @include tablet {
             width: 40%;
 
         }
+
         &:not(.questions__answer--correct, .questions__answer--incorrect):hover {
             background-color: $secondary-color;
         }
+
         &--correct {
             background-color: $correct-color;
         }
+
         &--incorrect {
             background-color: $incorrect-color;
         }
 
     }
+
     &__button {
         display: flex;
         align-items: center;
@@ -249,6 +266,7 @@
         height: 3rem;
         margin: 1rem 0;
         border-radius: .3125rem;
+
         &:hover {
             background-color: $secondary-color;
             box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 .375rem 1.25rem 0 rgba(0, 0, 0, 0.19);
@@ -259,11 +277,61 @@
             position: relative;
             transform: translate(0, 0.5rem);
         }
+
         &--hidden {
+            // visibility: hidden;
             display: none;
         }
     }
+
     &__score {
-        padding-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // text-align: center;
+        // padding-top: 5rem;
+        padding-bottom: 5rem;
+        text-align: center;
+        // margin-bottom: 12rem;
+        font-size: 2.25rem;
+
+        @include tablet {
+            font-size: 3.5rem;
+        }
+        @include desktop {
+
+            font-size: 5rem;
+        }
+    }
+
+    &__retry {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: $tertiary-color;
+        color: $primary-color-alt;
+        text-transform: uppercase;
+        @include text-bold;
+        width: 9rem;
+        height: 3rem;
+        margin: 1rem 0;
+        border-radius: .3125rem;
+
+        &:hover {
+            background-color: $secondary-color;
+            box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 .375rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+        }
+
+        &:active {
+            box-shadow: none;
+            position: relative;
+            transform: translate(0, 0.5rem);
+        }
+
+        &--hidden {
+            visibility: hidden;
+        }
+
     }
 }

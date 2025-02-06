@@ -62,7 +62,9 @@ label {
         width: 100%;
         @include container;
     }
-
+&__home {
+    z-index: 2;
+}
     &__logo {
         height: 3.125rem;
         width: 3.125rem;

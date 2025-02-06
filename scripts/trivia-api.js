@@ -47,6 +47,8 @@ const nextBtn = document.querySelector(".questions__button");
 const formEl = document.querySelector(".preferences__form");
 const preference = document.querySelector(".preferences");
 const questionSection = document.querySelector(".questions");
+const retryButton = document.querySelector(".questions__retry");
+
 const baseUrl = "https://opentdb.com/api.php";
 let score = 0;
 let questions = [];
@@ -57,15 +59,18 @@ formEl.addEventListener("submit", (event)=>{
     const question = document.getElementById("number").value;
     const level = document.getElementById("difficulty").value;
     const category = document.getElementById("category").value;
+    const type = document.getElementById("type").value;
+    const hero = document.querySelector(".hero");
+    hero.classList.add("hero--hidden");
 
     //call the fetchQuestion function
-    fetchQuestion(question,category,level);
+    fetchQuestion(question,category,level, type);
 questionSection.classList.remove("questions--hidden");
 preference.classList.add("preferences--hidden");
 })
 
-async function fetchQuestion(question, category, level) {
-  const url = `${baseUrl}?amount=${question}&category=${category}&difficulty=${level}&type=multiple`;
+async function fetchQuestion(question, category, level, type) {
+  const url = `${baseUrl}?amount=${question}&category=${category}&difficulty=${level}&type=${type}`;
   try {
     console.log(url);
     const response = await axios.get(url);
@@ -84,6 +89,7 @@ async function fetchQuestion(question, category, level) {
 }
 // fetchQuestion(5, 19, "easy");
 function displayQuiz() {
+  nextBtn.classList.add("questions__button--hidden");
   if (index < questions.length) {
     questionEl.innerHTML = "";
     optionUl.innerHTML = "";
@@ -93,14 +99,14 @@ function displayQuiz() {
     console.log(currentQuestion.answer);
     console.log(currentQuestion.options);
     let optionsList = currentQuestion.options.sort();
-    let currentAnswer = currentQuestion.answer;
+    let currentAnswer = decode(currentQuestion.answer);
     questionEl.textContent = decode(currentQuestion.question);
 
     //iterate through array
     optionsList.forEach((option) => {
       const li = document.createElement("div");
       li.classList.add("questions__answer");
-      li.textContent = option;
+      li.textContent = decode(option);
       li.addEventListener("click", () => checkAnswer(option, currentAnswer, li));
       optionUl.appendChild(li);
     });
@@ -112,9 +118,28 @@ function displayQuiz() {
   }
   else{
     console.log("Quiz completed");
+    const questionTitle= document.querySelector(".questions__title");
+    questionTitle.textContent = "Results";
     questionEl.classList.add("questions__question--hidden");
+    retryButton.classList.remove("questions__retry--hidden");
     optionUl.innerHTML = "";
-    scoreEl.textContent = `Your score is : ${score}/${questions.length}`;
+    if ((score/questions.length) >= 0.8 && (score/questions.length) < 1 )
+    {
+    scoreEl.textContent = `Great job! Your score is : ${score}/${questions.length}`;
+    }    else  if ((score/questions.length) === 1 )
+      {
+      scoreEl.textContent = `Perfect! Your score is : ${score}/${questions.length}`;
+      } else if ((score/questions.length) >= 0.5 && (score/questions.length) < 0.8 )
+      {
+        scoreEl.textContent = `Nice! Your score is : ${score}/${questions.length}`;
+      } else if ((score/questions.length) < 0.5 && (score/questions.length) > 0 )
+        {
+          scoreEl.textContent = `Better luck next time. Your score is : ${score}/${questions.length}`;
+        }
+        else  if ((score/questions.length) === 0 )
+          {
+            scoreEl.textContent = `Yikes. Your score is : ${score}/${questions.length}`;
+          }
     nextBtn.disabled = true;
     nextBtn.classList.add("questions__button--hidden");
   }
@@ -122,7 +147,13 @@ function displayQuiz() {
 }
 
 function checkAnswer(option, answer, selectedAnswer) {
+  nextBtn.classList.remove("questions__button--hidden");
   console.log("I have clicked " + option);
+  const nodes = document.querySelectorAll(".questions__answer");
+  console.log(nodes);
+  nodes.forEach((node)=>{
+    node.style.pointerEvents ="none";
+  })
   if (option === answer) {
     console.log("My answer is correct");
     selectedAnswer.classList.add("questions__answer--correct")
@@ -143,3 +174,10 @@ function decode(text) {
     let doc = new DOMParser().parseFromString(text, "text/html");
     return doc.documentElement.textContent;
 }
+
+const homeBtn = document.querySelector(".navbar__home");
+homeBtn.addEventListener("click",()=>{
+  location.reload();
+  console.log("Click");
+  return false;
+})
